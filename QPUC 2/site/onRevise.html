@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Revise</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Tint&family=Fredericka+the+Great&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    <style>
+        td {
+            width: 200px;
+            height: 200px;
+            text-align: center;
+        }
+
+        strong{
+            text-decoration: underline;
+            background-color: rgb(242, 255, 0);
+        }
+
+        table,
+        th,
+        td {
+            border: 3px solid black;
+        }
+
+        .box {
+            box-sizing: content-box;
+            width: 82%;
+            border-radius: 30% ;
+            background-color: rgb(250, 250, 250);
+            border: 1rem double #ff0000 ;
+            padding: 40px;
+            color: black;
+  font-family: "Courier Prime", monospace;
+  font-weight: 400;
+  font-style: normal;
+        }
+    </style>
+</head>
+
+<body style="background-color: #53247c; color: azure; font-family: 'Fredericka the Great', serif;">
+    <div class="d-flex justify-content-between">
+        <img class="fit-picture" src="unnamed.png" style="position: absolute; top: 0px; left: 0px;" width="200"
+            height="200" />
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="d-flex justify-content-center">
+        <h1>CP -> Terminale</h1>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="d-flex justify-content-center">
+    <div class="box" id="box">
+        
+        <br>
+        <div class="d-flex justify-content-center" id="allImg" style="text-align: center;font-size: 35px;">
+            <div id="reponse">
+                On retourne en Primaire!
+            </div>
+        </div>
+        
+        <div class="d-flex justify-content-center" id="allImg" style="text-align: center;font-size: 40px;">
+            <br>
+            <div id="type" style="font-weight: bold; text-decoration: underline;">
+                A vous de jouer!!!
+            </div>
+        </div>
+        
+    <br>
+        <div class="d-flex justify-content-center" id="allNbr" style="font-size: 50px;">
+            <span id="nbrImg">0</span>/15
+        </div>
+    </div>
+
+    
+    </div>
+        <br>
+        <div class="d-flex justify-content-center">
+            <button type="button" class="btn btn-success" style="font-size: 50px;"
+                onclick="demarrerDecompte()">Suivant</button>
+        </div>
+</body>
+
+
+
+<script>
+    let tableauPrincipal = [
+        
+        ["Math", "3x+7=22.   X=?"],
+        
+        
+        ["Math", "3×(4+5) − 2 + 6  = ?"],
+
+        
+        ["Math", "2×(3+5)−4×(4+6)+6−5 = ?"],
+
+        
+        ["Sport", "Que fait un muscle lorsqu'il se contracte ?"],
+        
+        
+        ["Sport", "Quel est le rôle des tendons ?"],
+        
+        
+        ["Sport", "Quels sont les trois types de muscles dans le corps humain ?"],
+
+        
+        ["Conjugaison", "Conjugue le verbe 'aller' au conditionnel présent, à la deuxième personne du singulier."],
+
+        
+        ["Conjugaison", "Conjugue le verbe 'savoir' au futur antérieur, à la deuxième personne du pluriel."],
+
+        
+        ["Conjugaison", "Conjugue le verbe 'venir' au plus-que-parfait, à la deuxième personne du singulier."],
+        
+        
+        ["SES", "Qu'est-ce que le PNB ?"],
+
+        
+        ["SES", "Qu'est-ce que l'inflation ? "],
+
+        
+        ["SES", "Qu'est-ce que le chômage ?"],
+
+        
+        ["Histoire", "En quelle année a eu lieu la Révolution française ?"],
+        
+        
+        ["Histoire", "Quand Christophe Colomb a-t-il découvert l'Amérique ?"],
+
+        
+        ["Histoire ", "Quand a été signée la Déclaration d'indépendance des États-Unis ?"],
+    ]
+
+    $(".btn-success").on("click", function (e) {
+        next();
+    });
+
+    let nbr = 0
+    function next() {
+
+        document.getElementById('box').style.display='block';
+        $("#type").text("");
+        $("#reponse").text("");
+        $("#type").html(tableauPrincipal[nbr][0]);
+        $("#reponse").html(tableauPrincipal[nbr][1]);
+        $('#reponse').html(tableauPrincipal[nbr][1].replace('???', "<strong>???</strong>"));
+        setTimeout(
+        function() {
+          document.getElementById('box').style.display='none';
+        }, 7000);
+
+
+        nbr = nbr + 1
+        if (nbr === 15) {
+            $("#allNbr").text("");
+            $("#allNbr").text("Merci");
+        } else {
+            $("#nbrImg").text(nbr);
+        }
+    }
+</script>
+
+</body>
+
+</html>

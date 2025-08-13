@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Memoire</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee+Tint&family=Fredericka+the+Great&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="script.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <style>
+    td {
+        width:200px ; 
+        height:200px ;
+        text-align: center;
+    }
+    table, th, td {
+      border: 3px solid black;
+    }
+  </style>
+</head>
+<body style="background-color: #53247c; color: azure; font-family: 'Fredericka the Great', serif;">
+    
+    <div class="d-flex justify-content-center">
+    <h1>Mémoire vive ?</h1>
+    </div>
+    <div class="d-flex justify-content-center" id="allImg">
+        
+        <img
+        id="lieux"
+        src="unnamed.png"
+        alt="Grapefruit slice atop a pile of other slices"width="900" height="900"/>
+
+        <div class="d-flex justify-content-center flex-column">
+            <div id="compteur" style="font-size: 300px;position: absolute; top: 20%; left: 80%;">20</div>
+        </div>
+    </div>
+    <div class="d-none justify-content-center" id="allQuest">
+        <img
+        class="fit-picture"
+        src="unnamed.png"
+        width="800" height="800"/>
+    </div>
+    <div class="d-flex justify-content-center" id="allNbr" style="font-size: 50px;">
+        <span id="nbrImg">0</span>/4
+    </div>
+    <div class="d-flex justify-content-center">
+        <button type="button" class="btn btn-success" style="font-size: 50px;" onclick="demarrerDecompte()">Suivant</button>
+    </div>
+    
+
+    <div class="d-flex justify-content-between">
+        <img
+        class="fit-picture"
+        src="unnamed.png"
+        style="position: absolute; top: 0px; left: 0px;" width="200" height="200"/>
+    </div>
+    <script>
+        let tableauPrincipal = [
+            "media.jpg",
+            "91ZS7QWMgyL._UF1000,1000_QL80_.jpg",
+            "hercules-disney-reprint-movie-poster-buy-now-at-starstills__08502.jpg",
+            "Tousalbumsrougeor.webp",
+            "Memoire.PNG"
+            ];
+
+        $( ".btn-success" ).on( "click", function(e) {
+            next();
+        } );
+
+        let nbr = 0
+        function next(){
+            $( "#allImg" ).addClass( "d-flex" );
+            $( "#allImg" ).removeClass("d-none");
+            $( "#allQuest" ).removeClass("d-flex");
+            $( "#allQuest" ).addClass("d-none");
+            $( "#nbrImg" ).text("");
+            $("#lieux").attr("src","memoire/"+tableauPrincipal[nbr]);
+            nbr = nbr + 1 
+            if(nbr === 5){
+                $( "#allNbr" ).text("");
+                $( "#allNbr" ).text("Merci!");
+            }else{
+                $( "#nbrImg" ).text(nbr);
+            }
+        }
+
+        function demarrerDecompte() {
+            let compteur = 19; // Changez ce nombre pour le départ souhaité
+            const affichage = document.getElementById('compteur');
+
+            const interval = setInterval(() => {
+                affichage.textContent = compteur;
+                compteur--;
+
+                if (compteur < 0) {
+                    clearInterval(interval);
+                    affichageQuest()
+                }
+            }, 1000);
+        }
+
+        function affichageQuest() {
+            $( "#allImg" ).removeClass( "d-flex" );
+            $( "#allImg" ).addClass("d-none");
+            $( "#allQuest" ).addClass("d-flex");
+            $( "#allQuest" ).removeClass("d-none");
+        }
+    </script>
+</body>
+</html>

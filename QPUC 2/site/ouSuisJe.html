@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Ou suis-je</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee+Tint&family=Fredericka+the+Great&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="script.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <style>
+    td {
+        width:200px ; 
+        height:200px ;
+        text-align: center;
+    }
+    table, th, td {
+      border: 3px solid black;
+    }
+  </style>
+</head>
+<body style="background-color: #53247c; color: azure; font-family: 'Fredericka the Great', serif;">
+    
+    <div class="d-flex justify-content-center">
+    <h1>Où suis-je ?</h1>
+    </div>
+    <div class="d-flex justify-content-center">
+        
+        <img
+        id="lieux"
+        src="unnamed.png"
+        alt="Grapefruit slice atop a pile of other slices"width="700" height="700"/>
+
+
+    </div>
+    <div class="d-flex justify-content-center" style="font-size: 50px;" id="allNbr">
+        <span id="nbrImg">0</span>/15
+    </div>
+    <div class="d-flex justify-content-center">
+        <button type="button" class="btn btn-success" style="font-size: 50px;">Suivant</button>
+    </div>
+    
+
+    <div class="d-flex justify-content-between">
+        <img
+        class="fit-picture"
+        src="unnamed.png"
+        style="position: absolute; top: 0px; left: 0px;" width="200" height="200"/>
+    </div>
+    <script>
+        let tableauPrincipal = [
+            "mario.jpg",
+            "cracovie-wieliczka-lac-ntrinkhaus.jpg",
+            "136068.png",
+            "zootopia-scaled.jpeg",
+            "arcane-piltover.jpg",
+            "Capture.PNG",
+            "Things-to-do-near-Shibuya.jpg",
+            "H_00658_001.jpg",
+            "ffviir-zoom-midgar-city-q62ooffoa.jpg",
+            "250429-1129-533767670.jpg",
+            "observatoire.png",
+            "big-ben-min.jpg",
+            "1313917-Washington.jpg",
+            "Depositphotos_90926998_s-2019.jpg",
+            "La-place-Tiananmen-Pekin.jpg",
+            "f13892b4196545d081787f0510ff916a.jpg"
+            ];
+
+        $( ".btn-success" ).on( "click", function(e) {
+            next();
+        } );
+
+        let nbr = 0
+        function next(){
+            console.log($( "#nbrImg").val())
+            $( "#nbrImg" ).text("");
+            $("#lieux").attr("src","lieux/"+tableauPrincipal[nbr]);
+            nbr = nbr + 1 
+            if(nbr === 16){
+                $( "#allNbr" ).text("");
+                $( "#allNbr" ).text("Merci!");
+            }else{
+                $( "#nbrImg" ).text(nbr);
+            }
+        }
+    </script>
+</body>
+</html>

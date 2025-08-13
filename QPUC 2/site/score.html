@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>SCORE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee+Tint&family=Fredericka+the+Great&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="script.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <style>
+    td {
+        width:200px ; 
+        height:200px ;
+        text-align: center;
+    }
+    table, th, td {
+      border: 3px solid black;
+    }
+  </style>
+</head>
+<body style="background-color: #53247c; color: azure; font-family: 'Fredericka the Great', serif; font-size: 32px;">
+    <div class="d-flex justify-content-between">
+        <img
+        class="fit-picture"
+        src="unnamed.png"
+        alt="Grapefruit slice atop a pile of other slices"width="200" height="200"/>
+        
+        <h1>Gestion des Points des Équipes</h1>
+        <h1></h1>
+    </div>
+            <br>
+            <br>
+            <br>
+            <br>
+    <div class="container-fluid">
+        <div class="d-flex ">
+            <div class="team">
+                <div>Équipe A</div>
+                <p id="scoreA">Points: 0</p>
+                <input type="number" id="pointsA" min="0" value="0">
+                <button onclick="ajouterPoints('A')">Ajouter Points</button>
+            </div>
+            <div class="team">
+                <div>Équipe B</div>
+                <p id="scoreB">Points: 0</p>
+                <input type="number" id="pointsB" min="0" value="0">
+                <button onclick="ajouterPoints('B')">Ajouter Points</button>
+            </div>
+            <div class="team">
+                <div>Équipe C</div>
+                <p id="scoreC">Points: 0</p>
+                <input type="number" id="pointsC" min="0" value="0">
+                <button onclick="ajouterPoints('C')">Ajouter Points</button>
+            </div>
+            <div class="team">
+                <div>Équipe D</div>
+                <p id="scoreD">Points: 0</p>
+                <input type="number" id="pointsD" min="0" value="0">
+                <button onclick="ajouterPoints('D')">Ajouter Points</button>
+            </div>
+            <div class="team">
+                <div>Équipe E</div>
+                <p id="scoreE">Points: 0</p>
+                <input type="number" id="pointsE" min="0" value="0">
+                <button onclick="ajouterPoints('E')">Ajouter Points</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        let pointsA = 0;
+let pointsB = 0;
+let pointsC = 0;
+let pointsD = 0;
+let pointsE = 0;
+
+function ajouterPoints(equipe) {
+    let pointsToAdd;
+    
+    if (equipe === 'A') {
+        pointsToAdd = parseInt(document.getElementById('pointsA').value) || 0;
+        pointsA += pointsToAdd;
+        document.getElementById('scoreA').innerText = 'Points: ' + pointsA;
+        document.getElementById('pointsA').value = 0; // Réinitialiser l'input
+    } else if (equipe === 'B') {
+        pointsToAdd = parseInt(document.getElementById('pointsB').value) || 0;
+        pointsB += pointsToAdd;
+        document.getElementById('scoreB').innerText = 'Points: ' + pointsB;
+        document.getElementById('pointsB').value = 0; // Réinitialiser l'input
+    } else if (equipe === 'C') {
+        pointsToAdd = parseInt(document.getElementById('pointsC').value) || 0;
+        pointsC += pointsToAdd;
+        document.getElementById('scoreC').innerText = 'Points: ' + pointsC;
+        document.getElementById('pointsC').value = 0; // Réinitialiser l'input
+    } else if (equipe === 'D') {
+        pointsToAdd = parseInt(document.getElementById('pointsD').value) || 0;
+        pointsD += pointsToAdd;
+        document.getElementById('scoreD').innerText = 'Points: ' + pointsD;
+        document.getElementById('pointsD').value = 0; // Réinitialiser l'input
+    } else if (equipe === 'E') {
+        pointsToAdd = parseInt(document.getElementById('pointsE').value) || 0;
+        pointsE += pointsToAdd;
+        document.getElementById('scoreE').innerText = 'Points: ' + pointsE;
+        document.getElementById('pointsE').value = 0; // Réinitialiser l'input
+    }
+}
+    </script>
+</body>
+</html>
