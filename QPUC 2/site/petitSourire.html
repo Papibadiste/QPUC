@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Echauffement</title>
+    <title>Smiley</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bungee+Tint&family=Fredericka+the+Great&display=swap"
@@ -57,20 +57,23 @@
     <br>
     <br>
     <div class="d-flex justify-content-center">
-        <h1>Echauffement</h1>
+        <h1></h1>
     </div>
     <br>
     <br>
     <br>
     <div class="d-flex justify-content-center">
     <div class="box" id="box">
+
         
         <br>
-        <div class="d-flex justify-content-center" id="allImg" style="text-align: center;font-size: 35px;">
+        <div class="d-flex justify-content-center" id="allImg" style="text-align: center;font-size:200px;">
             <div id="reponse">
-                Echauffement!
+                	&#x1F600;
             </div>
         </div>
+        
+        
         
         <div class="d-flex justify-content-center" id="allImg" style="text-align: center;font-size: 40px;">
             <br>
@@ -79,51 +82,53 @@
             </div>
         </div>
         
+        
     <br>
         <div class="d-flex justify-content-center" id="allNbr" style="font-size: 50px;">
-            <span id="nbrImg">0</span>/9
+            <span id="nbrImg">0</span>/10
         </div>
     </div>
 
     
     </div>
-        <br>
+    
         <div class="d-flex justify-content-center">
             <button type="button" class="btn btn-success" style="font-size: 50px;"
-                onclick="demarrerDecompte()">Suivant</button>
+                >Suivant</button>
         </div>
 </body>
-
-
 
 <script>
     let tableauPrincipal = [
         
-        ["Math", "3x+7=22.   X=?"],
+        ["Musique: titre", "&#x1F441; 	&#x1F42F; 	&#x1F94A;"],
         
         
-        ["Math", "3×(4+5) − 2 + 6  = ?"],
+        ["Sport", "&#x2744; &#x1F3C3; &#x1F3AF;"],
 
         
-        ["Math", "2×(3+5)−4×(4+6)+6−5 = ?"],
+        ["Evenement + date", "&#x2708; &#x1F3E2; &#x1F3E2; "],
+        
+        ["Film", "	&#x1F468;&#x1F3FF;  &#x267F; &#x1F468;"],
 
         
-        ["Conjugaison", "Conjugue le verbe 'aller' au conditionnel présent, à la deuxième personne du singulier."],
+        ["Partie Politique", "&#x1F4AE; &#x1F534; &#x1F448;"],
 
         
-        ["Conjugaison", "Conjugue le verbe 'savoir' au futur antérieur, à la deuxième personne du pluriel."],
+        ["Chanteur", "&#x1F4A1; &#x1F6BF;"],
+        
+        
+        ["Expression ", "&#x1F3C5; &#x1F36B;"],
 
         
-        ["Conjugaison", "Conjugue le verbe 'venir' au plus-que-parfait, à la deuxième personne du singulier."],
-        
-        
-        ["SES", "Qu'est-ce que le PNB ?"],
-        
-        
-        ["Histoire", "Quand Christophe Colomb a-t-il découvert l'Amérique ?"],
+        ["Expression", "&#x1F3CA; &#x1F943;"],
 
         
-        ["Histoire ", "Quand a été signée la Déclaration d'indépendance des États-Unis ?"],
+        ["Musique: chanteur/groupe", "&#x2753; &#x1F315; 	&#x1F534; 	&#x2B50;"],
+
+        
+        ["Sportif", "&#x2649; 	&#x1F3BE; &#x1F4AA;"],
+        
     ]
 
     $(".btn-success").on("click", function (e) {
@@ -139,14 +144,10 @@
         $("#type").html(tableauPrincipal[nbr][0]);
         $("#reponse").html(tableauPrincipal[nbr][1]);
         $('#reponse').html(tableauPrincipal[nbr][1].replace('???', "<strong>???</strong>"));
-        setTimeout(
-        function() {
-          document.getElementById('box').style.display='none';
-        }, 7000);
 
 
         nbr = nbr + 1
-        if (nbr === 15) {
+        if (nbr === 10) {
             $("#allNbr").text("");
             $("#allNbr").text("Merci");
         } else {
@@ -158,3 +159,4 @@
 </body>
 
 </html>
+

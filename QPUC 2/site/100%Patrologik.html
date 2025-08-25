@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Echauffement</title>
+    <title>Revise</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bungee+Tint&family=Fredericka+the+Great&display=swap"
@@ -57,20 +57,23 @@
     <br>
     <br>
     <div class="d-flex justify-content-center">
-        <h1>Echauffement</h1>
+        <h1></h1>
     </div>
     <br>
     <br>
     <br>
     <div class="d-flex justify-content-center">
     <div class="box" id="box">
+
         
         <br>
         <div class="d-flex justify-content-center" id="allImg" style="text-align: center;font-size: 35px;">
             <div id="reponse">
-                Echauffement!
+                1 + 1 = 1 + 1
             </div>
         </div>
+        
+        
         
         <div class="d-flex justify-content-center" id="allImg" style="text-align: center;font-size: 40px;">
             <br>
@@ -79,14 +82,22 @@
             </div>
         </div>
         
+        
     <br>
         <div class="d-flex justify-content-center" id="allNbr" style="font-size: 50px;">
-            <span id="nbrImg">0</span>/9
+            <span id="nbrImg">0</span>/13
         </div>
     </div>
 
     
+    
+
+    
     </div>
+    
+        <div class="d-flex justify-content-center flex-column">
+            <div id="compteur" style="font-size: 150px;; text-align: center;">15</div>
+        </div>
         <br>
         <div class="d-flex justify-content-center">
             <button type="button" class="btn btn-success" style="font-size: 50px;"
@@ -94,36 +105,45 @@
         </div>
 </body>
 
-
-
 <script>
     let tableauPrincipal = [
         
-        ["Math", "3x+7=22.   X=?"],
+        ["", "Sachant qu'il faut 3 minutes pour faire cuire un œuf à la coque, combien de temps faut-il au minimum pour faire cuire quatre œufs à la coque ?"],
         
         
-        ["Math", "3×(4+5) − 2 + 6  = ?"],
+        ["", "Je commence la nuit et je finis le matin. Qui suis-je ?"],
 
         
-        ["Math", "2×(3+5)−4×(4+6)+6−5 = ?"],
+        ["", "Combien y a-t-il de mots différents dans ce célèbre refrain : Que je t'aime, que je t'aime, que je t'aime. Que je t'aime, que je t'aime, que je t'aime."],
+        
+        ["", "Un bateau a une échelle de corde qui pend d'un côté. Le bas de l'échelle pend à 20 cm au-dessus de l'eau. Si l'eau monte de 10 cm, quelle est alors la distance entre l'eau et le bas de l'échelle ?"],
 
         
-        ["Conjugaison", "Conjugue le verbe 'aller' au conditionnel présent, à la deuxième personne du singulier."],
+        ["", "Dans une pièce, il y a 5 chats.Chaque chat voit 3 autres chats.Combien y a-t-il de chats en tout ?"],
 
         
-        ["Conjugaison", "Conjugue le verbe 'savoir' au futur antérieur, à la deuxième personne du pluriel."],
+        ["", "Combien de fois au minimum faut-il trancher un gâteau classique pour obtenir huit parts égales ?"],
+        
+        
+        ["", "Sur le principe qu'une semaine commence le lundi et finit le dimanche, en mettant dans l'ordre alphabétique les jours de la semaine, lequel ne changera pas de place ?"],
 
         
-        ["Conjugaison", "Conjugue le verbe 'venir' au plus-que-parfait, à la deuxième personne du singulier."],
-        
-        
-        ["SES", "Qu'est-ce que le PNB ?"],
-        
-        
-        ["Histoire", "Quand Christophe Colomb a-t-il découvert l'Amérique ?"],
+        ["", "Sur un réveil digital classique, à quelle heure la somme des quatre chiffres sera-t-elle la plus élevée ?"],
 
         
-        ["Histoire ", "Quand a été signée la Déclaration d'indépendance des États-Unis ?"],
+        ["", "Quelle lettre complète cette suite logique : D - N - H - S - S - C - Q - ?"],
+
+        
+        ["", "Quel chiffre complète cette suite logique : 100 - 11 - 9 - 8 - 7 - ?"],
+        
+        ["", "3 – 6 – 9 – 18 – 27 – 54 – ?? "],
+
+        
+        ["", "Tu as 2 cordes. Chacune met 1 heure à brûler, mais pas de façon régulière (parfois rapide, parfois lente). Comment mesurer 45 minutes ?"],
+
+        
+        ["", "Deux pères et deux fils vont à la pêche.Chacun attrape un poisson, mais au final il n’y a que trois poissons.Comment est-ce possible ?"],
+        
     ]
 
     $(".btn-success").on("click", function (e) {
@@ -142,17 +162,32 @@
         setTimeout(
         function() {
           document.getElementById('box').style.display='none';
-        }, 7000);
+        }, 15000);
 
 
         nbr = nbr + 1
-        if (nbr === 15) {
+        if (nbr === 13) {
             $("#allNbr").text("");
             $("#allNbr").text("Merci");
         } else {
             $("#nbrImg").text(nbr);
         }
     }
+
+    function demarrerDecompte() {
+            let compteur = 15; // Changez ce nombre pour le départ souhaité
+            const affichage = document.getElementById('compteur');
+
+            const interval = setInterval(() => {
+                affichage.textContent = compteur;
+                compteur--;
+
+                if (compteur < 0) {
+                    clearInterval(interval);
+                    affichageQuest()
+                }
+            }, 1000);
+        }
 </script>
 
 </body>

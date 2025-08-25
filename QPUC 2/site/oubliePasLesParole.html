@@ -81,7 +81,7 @@
         
     <br>
         <div class="d-flex justify-content-center" id="allNbr" style="font-size: 50px;">
-            <span id="nbrImg">0</span>/20
+            <span id="nbrImg">0</span>/10
         </div>
     </div>
 
@@ -98,13 +98,6 @@
 
 <script>
     let tableauPrincipal = [
-        
-        ["Les bronzés font du ski", "Si tu veux un \n conseil, oublie que t'as aucune chance. <br> On sait jamais, ??? ça peut marcher.  "],
-        
-        
-        ["Oss117", "23 à 0 ! C'est la ??? Jack ! <br> Tu sais pas jouer Jack ! T'es mauvais !"],
-
-        
         ["Forrest Gump (1994)", "La vie, c'est comme ??? : on ne sait jamais sur quoi on va tomber "],
 
         
@@ -112,28 +105,12 @@
         
         
         ["Dans Le dîner de cons (1998).", "Il s’appelle ??? Leblanc "],
-        
-        
-        ["La Ligne Verte", "Je suis fatigué patron, fatigué de devoir courir les routes et d'être seul comme ??? sous la pluie. <br> Fatigué d'avoir jamais un ami pour parler, pour me dire où on va, d'où on vient et pourquoi. "],
 
-        
+
         ["Jacques Chirac", "Ce soir, je ne suis pas le ???, et vous n’êtes pas le président de la République, <br> nous sommes deux candidats à égalité, vous me permettrez donc de vous appeler monsieur Mitterrand. "],
 
         
-        ["JMLP", "La première usine qu'il faut faire en France, c'est une usine ???"],
-
-        
-        ["Melenchon", "La ???, c’est moi ! "],
-        
-        
-        ["Ribery", "Je pense ??? qu’on va gagner. "],
-
-        
-        ["Mohammed ali", "Qui a la même vision du monde à vingt ans qu’à cinquante, a perdu ??? de sa vie. "],
-
-        
-        ["Doflamingo", "Les pirates, c'est le mal ?! ???, c'est la justice ?! Ces notions ont été échangées. Dieu sait combien de fois... ! "],
-
+        ["Melenchon", "La ???, c’est moi !"],
         
         ["Tropico", "Quand c'est ???, c'est Tropico"],
         
@@ -143,18 +120,7 @@
         
         ["Danette ", "Tout le monde ??? pour Danette ! "],
 
-        
-        ["Hymne Français", "Allons enfant de la patrie <br> Le jour de gloire est arrivé  <br> Contre nous ??? <br> L'étendard sanglant est levé <br> L'étendard sanglant est levé <br> Entendez-vous dans les campagnes "],
-
-        
-        ["Claude francois", "Cette année-là <br> Le rock'n'roll venait d'ouvrir ses ailes <br> Et dans mon coin, je chantais ??? <br> Et le public aimait ça "],
-        
-        
-        ["Louise attaque", "Elle est pas d'accord, elle est passionnée <br> Elle est pas fut'-fut', oh, elle est pathétique <br> Elle aime pas ??? <br> Elle est pas solitaire, elle est pas solidaire "],
-
-        
         ["Orelsan", "Au fond, j'crois qu'la Terre est ronde <br> Pour une seule bonne raison <br> Après avoir fait l'tour du monde ???,c'est être à la maison"],
-
         
         ["Gims", "J'me tire, me demande pas pourquoi j'suis parti sans motif <br> Parfois je sens mon cœur qui s'endurcit <br> C'est triste à dire mais plus rien ??? <br> Laisse-moi partir loin d'ici"],
     ]
@@ -172,7 +138,7 @@
         $("#reponse").html(tableauPrincipal[nbr][1]);
         $('#reponse').html(tableauPrincipal[nbr][1].replace('???', "<strong>???</strong>"));
         nbr = nbr + 1
-        if (nbr === 20) {
+        if (nbr === 10) {
             $("#allNbr").text("");
             $("#allNbr").text("Merci");
         } else {
